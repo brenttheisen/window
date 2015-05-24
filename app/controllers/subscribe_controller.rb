@@ -14,6 +14,6 @@ class SubscribeController < ApplicationController
     :card  => token,
     plan: params[:id]
   )
-    redirect_to root_path, notice: "Thank You For Your Support"
+    redirect_to root_path(email: customer.email), notice: "Thank You For Your Support"
   end
 end
