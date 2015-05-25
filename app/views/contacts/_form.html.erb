@@ -1,0 +1,66 @@
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- Contact Section -->
+  <section id="contact" class="contacts-section">
+      <div class="container content-lg">
+          <div class="title-v1">
+              <h2>Contact Us</h2>
+              <p> Have an idea? Suggestions? Shoot us a message!</p>
+          </div>
+
+          <div class="row contacts-in">
+              <div class="col-md-6 md-margin-bottom-40">
+                  <ul class="list-unstyled">
+                      <li><i class="fa fa-home"></i> 30 West Mifflin Floor 6, Madison WI, 53703</li>
+                      <li><i class="fa fa-envelope"></i> <a href="info@example.com">windowsofworlds@gmail.com</a></li>
+                  </ul>
+              </div>
+
+              <div class="col-md-6">
+                  <form action="/contacts" method="post" id="sky-form3" class="sky-form contact-style">
+                      <fieldset>
+                          <label>Name</label>
+                          <div class="row">
+                              <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                  <div>
+                                      <%= f.text_field :name, class: 'form-control' %>
+                                  </div>
+                              </div>                
+                          </div>
+                          
+                          <label>Email <span class="color-red">*</span></label>
+                          <div class="row">
+                              <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                  <div>
+                                      <%= f.text_field :email, class: 'form-control' %>
+                                  </div>
+                              </div>                
+                          </div>
+                          
+                          <label>Message</label>
+                          <div class="row">
+                              <div class="col-md-11 margin-bottom-20 col-md-offset-0">
+                                  <div>
+                                      <%= f.text_area :message, class: 'form-control' %>
+                                  </div>
+                              </div>                
+                          </div>
+                          
+                          <p><button type="submit" class="btn-u btn-brd btn-brd-hover btn-u-dark">Send Message</button></p>
+                      </fieldset>
+                  </form> 
+              </div>
+          </div>            
+      </div>
+  </section>
+<% end %>
