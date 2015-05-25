@@ -14,6 +14,10 @@ class SubscribeController < ApplicationController
     :card  => token,
     plan: params[:id]
   )
-    redirect_to root_path(email: customer.email), notice: "Thank You For Your Support"
+    if customer.subscriptions.data[0].plan.id == '8734002' || customer.subscriptions.data[0].plan.id == '349867578729'
+      redirect_to new_shipping_path(email: customer.email), notice: "Thank You For Your Support"
+    else
+      redirect_to root_path, notice: "Thank You For Your Support"
+    end
   end
 end
