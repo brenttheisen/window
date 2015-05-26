@@ -1,5 +1,6 @@
 class ShippingsController < ApplicationController
   before_action :set_shipping, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:new, :create]
 
   # GET /shippings
   # GET /shippings.json
