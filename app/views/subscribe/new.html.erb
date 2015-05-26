@@ -6,10 +6,11 @@
         <p>Over 50 Remedies</p>
       </h4>
       <%= form_tag subscribe_path(987654356789), method: :put do %>
-      <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="Basic"
-              data-amount="1000"></script>
+        <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Basic"
+                data-amount="1000">
+        </script>
       <% end %>
   </div>
   <br>
@@ -46,10 +47,11 @@
         <p><em><strong>Extra</strong></em>: Coconut Oil Book</p>
       </h4>
   <%= form_tag subscribe_path(349867578729), method: :put do %>
-  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Basic"
-          data-amount="5000"></script>
+          data-amount="5000">
+    </script>
   <% end %>
   </div>
   <br>

@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  caches_page :new
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:new, :create]
 
