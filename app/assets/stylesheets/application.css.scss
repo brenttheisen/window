@@ -15,6 +15,9 @@
  *= require bootstrap.min.css
  */
 
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
  .container.top-space {
   margin-top: 75px;
 }

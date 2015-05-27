@@ -1,62 +1,64 @@
-<% if params[:plan_name] == 'window' %>
-  <div class="form-group text-center">
-    <h2>Window Sponsor</h2>
-      <h4>
-        <p>$20 Per Year</p>
-        <p>Grants one frame</p>
-        <p>Funds used for supplies</p>
-        <p></p>
-      </h4>
-      <%= form_tag subscribe_path(987654356789), method: :put do %>
+<div class="container top-space">
+  <% if params[:plan_name] == 'window' %>
+    <div class="form-group text-center">
+      <h2>Window Sponsor</h2>
+        <h4>
+          <p>$20 Per Year</p>
+          <p>Grants one frame</p>
+          <p>Funds used for supplies</p>
+          <p></p>
+        </h4>
+        <%= form_tag subscribe_path(987654356789), method: :put do %>
+          <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Basic"
+                  data-amount="2000">
+          </script>
+        <% end %>
+    </div>
+    <br>
+    <br>
+    <br>
+  <% elsif params[:plan_name] == 'world'%>
+    <div class="form-group text-center">
+      <h2>World Sponsorship</h2>
+          <h4>
+            <p>Grants one frame</p>
+            <p>Funds used for supplies</p>
+            <p>W.o.W. T-Shirt</p>
+          </h4>
+        <%= form_tag subscribe_path(8734002), method: :put do %>
         <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-description="Basic"
-                data-amount="2000">
-        </script>
-      <% end %>
-  </div>
-  <br>
-  <br>
-  <br>
-<% elsif params[:plan_name] == 'world'%>
-  <div class="form-group text-center">
-    <h2>World Sponsorship</h2>
+                data-amount="5000"></script>
+        <% end %>
+    </div>
+    <br>
+    <br>
+    <br>
+  <% else%>
+    <div class="form-group text-center">
+      <h2>Business Sponsor</h2>
         <h4>
           <p>Grants one frame</p>
           <p>Funds used for supplies</p>
           <p>W.o.W. T-Shirt</p>
+          <p>Website Featured Business Logo</p>
         </h4>
-      <%= form_tag subscribe_path(8734002), method: :put do %>
+    <%= form_tag subscribe_path(349867578729), method: :put do %>
       <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="Basic"
-              data-amount="5000"></script>
-      <% end %>
-  </div>
-  <br>
-  <br>
-  <br>
-<% else%>
-  <div class="form-group text-center">
-    <h2>Business Sponsor</h2>
-      <h4>
-        <p>Grants one frame</p>
-        <p>Funds used for supplies</p>
-        <p>W.o.W. T-Shirt</p>
-        <p>Website Featured Business Logo</p>
-      </h4>
-  <%= form_tag subscribe_path(349867578729), method: :put do %>
-    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Basic"
-          data-amount="10000">
-    </script>
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Basic"
+            data-amount="10000">
+      </script>
+    <% end %>
+    </div>
+    <br>
+    <br>
+    <br>
   <% end %>
-  </div>
-  <br>
-  <br>
-  <br>
-<% end %>
+</div>
 
 
 
