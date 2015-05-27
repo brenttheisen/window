@@ -2,7 +2,7 @@ require 'stripe'
 class SubscribeController < ApplicationController
   caches_page :new
   def new
-    unless (params[:plan_name] == "basic" || params[:plan_name] == "advanced" || params[:plan_name] == "standard")
+    unless (params[:plan_name] == "window" || params[:plan_name] == "world" || params[:plan_name] == "business")
       flash[:notice] = "Please select a plan to get started."
       redirect_to pricing_path  
     end

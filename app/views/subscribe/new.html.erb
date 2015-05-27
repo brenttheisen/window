@@ -1,29 +1,30 @@
-<% if params[:plan_name] == 'basic' %>
+<% if params[:plan_name] == 'window' %>
   <div class="form-group text-center">
-    <h2>Basic Plan Access Includes:</h2>
+    <h2>Window Sponsor</h2>
       <h4>
-        <p>Over 1,000 Recipes</p>
-        <p>Over 50 Remedies</p>
+        <p>$20 Per Year</p>
+        <p>Grants one frame</p>
+        <p>Funds used for supplies</p>
+        <p></p>
       </h4>
       <%= form_tag subscribe_path(987654356789), method: :put do %>
         <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-description="Basic"
-                data-amount="1000">
+                data-amount="2000">
         </script>
       <% end %>
   </div>
   <br>
   <br>
   <br>
-<% elsif params[:plan_name] == 'standard'%>
+<% elsif params[:plan_name] == 'world'%>
   <div class="form-group text-center">
-    <h2>Standard Plan Access Includes:</h2>
+    <h2>World Sponsorship</h2>
         <h4>
-          <p>Over 1,000 Recipes</p>
-          <p>Over 50 Remedies</p>
-          <p>Create Your Own Recipes &amp; Remedies</p>
-          <p><em><strong>Extra</strong></em>: Herbs Book</p>
+          <p>Grants one frame</p>
+          <p>Funds used for supplies</p>
+          <p>W.o.W. T-Shirt</p>
         </h4>
       <%= form_tag subscribe_path(8734002), method: :put do %>
       <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
@@ -37,14 +38,12 @@
   <br>
 <% else%>
   <div class="form-group text-center">
-    <h2>Advanced Plan Access Includes:</h2>
+    <h2>Business Sponsor</h2>
       <h4>
-        <p>Over 1,000 Recipes</p>
-        <p>Over 50 Remedies</p>
-        <p>Create Your Own Recipes &amp; Remedies</p>
-        <p><em><strong>Extra</strong></em>: Herbs Book</p>
-        <p>Create <em><strong>Private</strong></em> Recipes &amp; Remedies</p>
-        <p><em><strong>Extra</strong></em>: Coconut Oil Book</p>
+        <p>Grants one frame</p>
+        <p>Funds used for supplies</p>
+        <p>W.o.W. T-Shirt</p>
+        <p>Website Featured Business Logo</p>
       </h4>
   <%= form_tag subscribe_path(349867578729), method: :put do %>
     <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
