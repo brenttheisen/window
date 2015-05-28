@@ -6,34 +6,7 @@
                 <!-- SLIDE 1 -->
                 <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
                     <!-- MAIN IMAGE -->
-                    <%= image_tag "WoW_logo1.png", alt: 'Pink Girl', 'data-bgfit'=> 'cover', 'data-bgposition'=> 'center center', 'data-bgrepeat'=> 'no-repeat', class: 'img-responsive' %>
-
-                    <!-- LAYERS -->
-                    <div class="tp-caption rs-caption-1 sft start"
-                        data-x="center"
-                        data-hoffset="0"
-                        data-y="100"
-                        data-speed="800"
-                        data-start="2000"
-                        data-easing="Back.easeInOut"
-                        data-endspeed="300">
-                        PAGE WITH WOW LOGO
-                    </div>
-
-                    <!-- LAYER -->
-                    <div class="tp-caption rs-caption-2 sft"
-                        data-x="center"
-                        data-hoffset="0"
-                        data-y="200"
-                        data-speed="1000"
-                        data-start="3000"
-                        data-easing="Power4.easeOut"
-                        data-endspeed="300"
-                        data-endeasing="Power1.easeIn"
-                        data-captionhidden="off"
-                        style="z-index: 6">
-                        Something to compliment the PIC
-                    </div>
+                    <%= image_tag "WoW_logo1.png",'background-size'=>'contain' %>
 
                     <!-- LAYER -->
                     <div class="tp-caption rs-caption-3 sft"
@@ -199,8 +172,8 @@
     <div class="about-image ">
         <div class="container">
             <div class="title-v1">
-                <%= image_tag 'wow-logo.png', alt: 'WOW Logo', 'data-bgfit'=> 'cover', 'data-bgposition'=> 'center center', 'data-bgrepeat'=> 'no-repeat', class: 'img-responsive'  %>
-                <p>In its fifth year, Windows of Worlds (i.e. WoW) is an annual community building art project. <br> The message of WoW is that everyone has a unique window in which they view the world &amp; <br> that we can connect through our diversity!</p>                
+                <h1>Windows of Worlds</h1>
+                <p>In its fifth year, Windows of Worlds is an annual community building art project. <br> The message of WoW is that everyone has a unique window in which<br> they view the world &amp;  that we can connect through our diversity!</p>                
             </div>
             <div class="img-center">
                 <%= image_tag "pinkgirl2.jpg", alt: 'Pink Girl', 'data-bgfit'=> 'cover', 'data-bgposition'=> 'center center', 'data-bgrepeat'=> 'no-repeat', class: 'img-responsive' %>
