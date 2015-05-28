@@ -206,6 +206,16 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
 }
+.title-v1 h1.para, 
+.title-v1 h2.para {
+  color: #ffffff;
+  font-size: 28px;
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+}
 
 .title-v1 h1:after, 
 .title-v1 h2:after {

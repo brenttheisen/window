@@ -1907,14 +1907,14 @@
 
 .parallax-quote-in p {
   color: #fff;
-  font-size: 28px;
+  font-size: 18px;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
 }
 
 .parallax-quote-in p:after,
 .parallax-quote-in p:before {
-  content: ' " ';
+  content: '  ';
   position: absolute;
   font-family: Tahoma;
 }
