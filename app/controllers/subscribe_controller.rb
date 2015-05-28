@@ -8,6 +8,7 @@ class SubscribeController < ApplicationController
     end
   end
   def update
+    debugger
     token = params[:stripeToken]
     customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
