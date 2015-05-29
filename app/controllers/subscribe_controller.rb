@@ -11,10 +11,12 @@ class SubscribeController < ApplicationController
     debugger
     token = params[:stripeToken]
     customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
-    :card  => token,
-    plan: params[:id]
-  )
+      email: params[:stripeEmail],
+      card: token,
+      plan: params[:id],
+      description: 'Windows Of Worlds'
+    )
+    debugger
     if customer.subscriptions.data[0].plan.id == '8734002' || customer.subscriptions.data[0].plan.id == '349867578729'
       redirect_to new_shipping_path(email: customer.email), notice: "Thank You For Your Support"
     else
@@ -22,3 +24,7 @@ class SubscribeController < ApplicationController
     end
   end
 end
+
+
+
+# Stripe::Customer.retrieve(customer.id).subscriptions.all().data[0].plan.statement_descriptor
