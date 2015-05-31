@@ -20,12 +20,12 @@ class SubscribeController < ApplicationController
     else
       redirect_to root_path, notice: "Thank You For Your Support"
     end
-    Stripe::Transfer.create(
-      :amount => (Stripe::Plan.retrieve(params[:id]).amount * 15)/100,
-      :currency => "usd",
-      :recipient => 'rp_168eeSKsa3SDdBb0cxu6BvLW',
-      :description => "Transfer for Fred 15%"
-    )
+    # Stripe::Transfer.create(
+    #   :amount => (Stripe::Plan.retrieve(params[:id]).amount * 15)/100,
+    #   :currency => "usd",
+    #   :recipient => 'rp_168eeSKsa3SDdBb0cxu6BvLW',
+    #   :description => "Transfer for Fred 15%"
+    # )
     puts "Transfered Successfully"
   end
 end
