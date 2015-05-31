@@ -22,12 +22,12 @@ class SubscribeController < ApplicationController
     end
     debugger
     Stripe::Transfer.create(
-      # :amount => 400,
+      :amount => (Stripe::Plan.retrieve(params[:id]).amount * 15)/100,
       :currency => "usd",
-      :recipient => "rp_166leZEOQD9YskiGTOM7YpWv",
-      :description => "Transfer for test@example.com"
+      :recipient => 'rp_168eeSKsa3SDdBb0cxu6BvLW',
+      :description => "Transfer for Fred 15%"
     )
-
+    puts "Transfered Successfully"
   end
 end
 
