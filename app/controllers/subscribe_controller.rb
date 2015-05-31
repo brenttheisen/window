@@ -8,7 +8,6 @@ class SubscribeController < ApplicationController
     end
   end
   def update
-    debugger
     token = params[:stripeToken]
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
@@ -16,12 +15,19 @@ class SubscribeController < ApplicationController
       plan: params[:id],
       description: 'Windows Of Worlds'
     )
-    debugger
     if customer.subscriptions.data[0].plan.id == '8734002' || customer.subscriptions.data[0].plan.id == '349867578729'
       redirect_to new_shipping_path(email: customer.email), notice: "Thank You For Your Support"
     else
       redirect_to root_path, notice: "Thank You For Your Support"
     end
+    debugger
+    Stripe::Transfer.create(
+      # :amount => 400,
+      :currency => "usd",
+      :recipient => "rp_166leZEOQD9YskiGTOM7YpWv",
+      :description => "Transfer for test@example.com"
+    )
+
   end
 end
 
