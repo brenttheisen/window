@@ -26,7 +26,6 @@ class SubscribeController < ApplicationController
     #   :recipient => 'rp_168eeSKsa3SDdBb0cxu6BvLW',
     #   :description => "Transfer for Fred 15%"
     # )
-    puts "Transfered Successfully"
   end
 end
 
