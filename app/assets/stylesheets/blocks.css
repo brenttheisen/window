@@ -471,10 +471,6 @@
   border-top: dotted 1px #EF4823;
 }
 
-.service-box-v1 li:hover {
-  color: #EF4823;
-}
-
 .service-box-v1 li:first-child {
   padding-top: 0;
   border-top: none;
