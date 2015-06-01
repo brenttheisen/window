@@ -16,9 +16,6 @@
           </script>
         <% end %>
     </div>
-    <br>
-    <br>
-    <br>
   <% elsif params[:plan_name] == 'world'%>
     <div class="form-group text-center">
       <h2>World Sponsorship</h2>
@@ -34,9 +31,6 @@
                 data-amount="5000"></script>
         <% end %>
     </div>
-    <br>
-    <br>
-    <br>
   <% else%>
     <div class="form-group text-center">
       <h2>Business Sponsor</h2>
@@ -54,10 +48,10 @@
       </script>
     <% end %>
     </div>
-    <br>
-    <br>
-    <br>
   <% end %>
+  <h2 class='text-center'>This is an <em><strong><u>annual</u></strong></em> subscription</h2>
+  <p class="text-center">All sponsorships are non-refundable</p>
+  <p class='text-center'>To cancel your sponsorship subscription for next year<br> E-mail: <%= mail_to 'windowsofworlds@gmail.com' %></p>
 </div>
 
 
