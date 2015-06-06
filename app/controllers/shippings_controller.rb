@@ -15,8 +15,10 @@ class ShippingsController < ApplicationController
 
   # GET /shippings/new
   def new
+    debugger
     @email = params[:email]
     @shipping = Shipping.new
+    @promo = !params[:promo].nil?
   end
 
   # GET /shippings/1/edit
@@ -26,16 +28,18 @@ class ShippingsController < ApplicationController
   # POST /shippings
   # POST /shippings.json
   def create
+    debugger
     @shipping = Shipping.new(shipping_params)
-
-    respond_to do |format|
-      if @shipping.save
+    if @shipping.save
+      if params[:shipping][:promo] == 'true'
+        redirect_to new_promo_path, notice: "Enter your details to be promoted via twitter"
+      else
         format.html { redirect_to root_path, notice: 'Shipping info was successfully saved.' }
         format.json { render :show, status: :created, location: root_path }
-      else
-        format.html { render :new }
-        format.json { render json: @shipping.errors, status: :unprocessable_entity }
       end
+    else
+      format.html { render :new }
+      format.json { render json: @shipping.errors, status: :unprocessable_entity }
     end
   end
 

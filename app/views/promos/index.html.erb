@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Promos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Twitter handle</th>
+      <th>Band name</th>
+      <th>Youtube channel</th>
+      <th>Website link</th>
+      <th>Itunes link</th>
+      <th>Soundcloud link</th>
+      <th>Fb link</th>
+      <th>Insta link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promos.each do |promo| %>
+      <tr>
+        <td><%= promo.twitter_handle %></td>
+        <td><%= promo.band_name %></td>
+        <td><%= promo.youtube_channel %></td>
+        <td><%= promo.website_link %></td>
+        <td><%= promo.itunes_link %></td>
+        <td><%= promo.soundcloud_link %></td>
+        <td><%= promo.fb_link %></td>
+        <td><%= promo.insta_link %></td>
+        <td><%= link_to 'Show', promo %></td>
+        <td><%= link_to 'Edit', edit_promo_path(promo) %></td>
+        <td><%= link_to 'Destroy', promo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promo', new_promo_path %>

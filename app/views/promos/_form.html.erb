@@ -1,0 +1,18 @@
+<%= simple_form_for(@promo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :twitter_handle %>
+    <%= f.input :band_name %>
+    <%= f.input :youtube_channel %>
+    <%= f.input :website_link %>
+    <%= f.input :itunes_link %>
+    <%= f.input :soundcloud_link %>
+    <%= f.input :fb_link %>
+    <%= f.input :insta_link %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

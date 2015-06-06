@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526001640) do
+ActiveRecord::Schema.define(version: 20150606230100) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20150526001640) do
     t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "promos", force: :cascade do |t|
+    t.string   "twitter_handle"
+    t.string   "band_name"
+    t.string   "youtube_channel"
+    t.string   "website_link"
+    t.string   "itunes_link"
+    t.string   "soundcloud_link"
+    t.string   "fb_link"
+    t.string   "insta_link"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "shippings", force: :cascade do |t|

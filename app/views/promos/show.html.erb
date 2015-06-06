@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Twitter handle:</strong>
+  <%= @promo.twitter_handle %>
+</p>
+
+<p>
+  <strong>Band name:</strong>
+  <%= @promo.band_name %>
+</p>
+
+<p>
+  <strong>Youtube channel:</strong>
+  <%= @promo.youtube_channel %>
+</p>
+
+<p>
+  <strong>Website link:</strong>
+  <%= @promo.website_link %>
+</p>
+
+<p>
+  <strong>Itunes link:</strong>
+  <%= @promo.itunes_link %>
+</p>
+
+<p>
+  <strong>Soundcloud link:</strong>
+  <%= @promo.soundcloud_link %>
+</p>
+
+<p>
+  <strong>Fb link:</strong>
+  <%= @promo.fb_link %>
+</p>
+
+<p>
+  <strong>Insta link:</strong>
+  <%= @promo.insta_link %>
+</p>
+
+<%= link_to 'Edit', edit_promo_path(@promo) %> |
+<%= link_to 'Back', promos_path %>

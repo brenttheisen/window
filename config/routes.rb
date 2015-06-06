@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :promos
+
   devise_for :users
   resources :contacts
 
