@@ -18,15 +18,15 @@ class SubscribeController < ApplicationController
       plan: params[:id],
       description: 'Windows Of Worlds'
     )
-    if !params[:promo].nil?
-      if customer.subscriptions.data[0].plan.id == '8734002' || customer.subscriptions.data[0].plan.id == '349867578729'
-        redirect_to new_shipping_path(email: customer.email, promo: !params[:promo].nil?), notice: "Thank You For Your Support"
-      else
-        redirect_to new_promo_path, notice: "Thank You For Your Support"
-      end
+    
+    if customer.subscriptions.data[0].plan.id == '8734002' || customer.subscriptions.data[0].plan.id == '349867578729'
+      redirect_to new_shipping_path(email: customer.email, promo: params[:promo]), notice: "Thank You For Your Support"
+    elsif params[:promo] == 'promote'
+      redirect_to new_promo_path, notice: "Thank You For Your Support"
     else
       redirect_to root_path, notice: "Thanks for supporting"
     end
+
     # Stripe::Transfer.create(
     #   :amount => (Stripe::Plan.retrieve(params[:id]).amount * 15)/100,
     #   :currency => "usd",

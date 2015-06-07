@@ -2,17 +2,21 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :twitter_handle %>
-    <%= f.input :band_name %>
-    <%= f.input :youtube_channel %>
-    <%= f.input :website_link %>
-    <%= f.input :itunes_link %>
-    <%= f.input :soundcloud_link %>
-    <%= f.input :fb_link %>
-    <%= f.input :insta_link %>
+    <div class="row">  
+      <div class="col-md-4">  
+        <%= f.input :twitter_handle, input_html: {class: "form-control", value: "@"} %>
+        <%= f.input :band_name, input_html: {class: "form-control"} %>
+        <%= f.input :youtube_channel, input_html: {class: "form-control"} %>
+        <%= f.input :website_link, input_html: {class: "form-control"} %>
+        <%= f.input :itunes_link, input_html: {class: "form-control"} %>
+        <%= f.input :soundcloud_link, input_html: {class: "form-control"} %>
+        <%= f.input :fb_link, input_html: {class: "form-control"} %>
+        <%= f.input :insta_link, input_html: {class: "form-control"} %>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Submit", class: 'btn btn-u' %>
   </div>
 <% end %>

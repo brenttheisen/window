@@ -18,7 +18,7 @@ class ShippingsController < ApplicationController
     debugger
     @email = params[:email]
     @shipping = Shipping.new
-    @promo = !params[:promo].nil?
+    @promo = params[:promo]
   end
 
   # GET /shippings/1/edit
@@ -31,29 +31,26 @@ class ShippingsController < ApplicationController
     debugger
     @shipping = Shipping.new(shipping_params)
     if @shipping.save
-      if params[:shipping][:promo] == 'true'
+      if params[:shipping][:promo] == 'promote'
         redirect_to new_promo_path, notice: "Enter your details to be promoted via twitter"
       else
-        format.html { redirect_to root_path, notice: 'Shipping info was successfully saved.' }
-        format.json { render :show, status: :created, location: root_path }
+        redirect_to root_path, notice: 'Shipping info was successfully saved.'
       end
     else
-      format.html { render :new }
-      format.json { render json: @shipping.errors, status: :unprocessable_entity }
+       render :new
+       render json: @shipping.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /shippings/1
   # PATCH/PUT /shippings/1.json
   def update
-    respond_to do |format|
-      if @shipping.update(shipping_params)
-        format.html { redirect_to @shipping, notice: 'Shipping was successfully updated.' }
-        format.json { render :show, status: :ok, location: @shipping }
-      else
-        format.html { render :edit }
-        format.json { render json: @shipping.errors, status: :unprocessable_entity }
-      end
+    if @shipping.update(shipping_params)
+       redirect_to @shipping, notice: 'Shipping was successfully updated.'
+       render :show, status: :ok, location: @shipping
+    else
+       render :edit
+       render json: @shipping.errors, status: :unprocessable_entity
     end
   end
 
@@ -61,10 +58,8 @@ class ShippingsController < ApplicationController
   # DELETE /shippings/1.json
   def destroy
     @shipping.destroy
-    respond_to do |format|
-      format.html { redirect_to shippings_url, notice: 'Shipping was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     redirect_to shippings_url, notice: 'Shipping was successfully destroyed.'
+     head :no_content
   end
 
   private

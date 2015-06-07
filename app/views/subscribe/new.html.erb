@@ -15,8 +15,8 @@
                   data-description="Window Sponsorship"
                   data-amount="2000">
           </script>
-          <h4>Get promoted via Twitter for your contribution! </h4>
-          <p> Promote Me: <%= radio_button_tag(:promo, "child") %></p>
+          <h4>Get promoted via Twitter for your contribution!</h4>
+          <p>Click Button To Be Promoted: <%= radio_button_tag(:promo, "promote") %></p>
         <% end %>
     </div>
   <% elsif params[:plan_name] == 'world'%>
@@ -33,8 +33,8 @@
                   data-description="World Sponsorship"
                   data-amount="5000">
           </script>
-          <h4>Get promoted via Twitter for your contribution! </h4>
-          <p> Promote Me: <%= radio_button_tag(:promo, "child") %> </p>
+          <h4>Get promoted via Twitter for your contribution!</h4>
+          <p>Click Button To Be Promoted: <%= radio_button_tag(:promo, "promote") %></p>
         <% end %>
     </div>
   <% else%>
@@ -52,10 +52,10 @@
             data-description="Business Sponsorship"
             data-amount="10000">
       </script>
-      <h4>Get promoted via Twitter for your contribution! </h4>
-      <p> Promote Me: <%= radio_button_tag(:promo, "child") %> </p>
+      <h4>Get promoted via Twitter for your contribution!</h4>
+      <p>Click Button To Be Promoted: <%= radio_button_tag(:promo, "promote") %></p>
     <% end %>
-    </div>
+  </div>
   <% end %>
   <p class="text-center">All sponsorships are non-refundable</p>
   <p class='text-center'>To cancel your sponsorship subscription for next year<br> E-mail: <%= mail_to 'windowsofworlds@gmail.com' %></p>
