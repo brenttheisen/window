@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/assets/line-icons.css">
     <link rel="stylesheet" href="/assets/font-awesome.min.css">    
     <link rel="stylesheet" href="/assets/owl.carousel.css">    
+    <link rel="stylesheet" href="/assets/jquery.fancybox.css">           
     <link rel="stylesheet" href="/assets/settings.css" type="text/css" media="screen">
   </head>
   <body id="body" data-spy="scroll" class="demo-lightbox-gallery">
@@ -26,6 +27,8 @@
       <%= yield %>
     <%= render partial: 'layouts/footer'%>
     <script type="text/javascript" src="/assets/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="/assets/fancy-box.js"></script>
     <script type="text/javascript" src="/assets/jquery-migrate.min.js"></script>    
     <!-- JS Implementing Plugins -->
     <script type="text/javascript" src="/assets/smoothScroll.js"></script>    
@@ -55,6 +58,12 @@
             OwlCarousel.initOwlCarousel();
             RevolutionSlider.initRSfullScreen();
         });
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            App.init();
+            FancyBox.initFancybox();
+            });
     </script>
   </body>
 </html>
