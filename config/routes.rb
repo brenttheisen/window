@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :biz_promos
+
   resources :promos
 
   devise_for :users

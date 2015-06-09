@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @biz_promo.business_name %>
+</p>
+
+<p>
+  <strong>Twitter handle:</strong>
+  <%= @biz_promo.twitter_handle %>
+</p>
+
+<p>
+  <strong>Website url:</strong>
+  <%= @biz_promo.website_url %>
+</p>
+
+<p>
+  <strong>Facebook url:</strong>
+  <%= @biz_promo.facebook_url %>
+</p>
+
+<p>
+  <strong>Instagram handle:</strong>
+  <%= @biz_promo.instagram_handle %>
+</p>
+
+<%= link_to 'Edit', edit_biz_promo_path(@biz_promo) %> |
+<%= link_to 'Back', biz_promos_path %>

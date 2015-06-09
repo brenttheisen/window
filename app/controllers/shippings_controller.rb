@@ -15,7 +15,6 @@ class ShippingsController < ApplicationController
 
   # GET /shippings/new
   def new
-    debugger
     @email = params[:email]
     @shipping = Shipping.new
     @promo = params[:promo]
@@ -28,11 +27,12 @@ class ShippingsController < ApplicationController
   # POST /shippings
   # POST /shippings.json
   def create
-    debugger
     @shipping = Shipping.new(shipping_params)
     if @shipping.save
-      if params[:shipping][:promo] == 'promote'
-        redirect_to new_promo_path, notice: "Enter your details to be promoted via twitter"
+      if params[:shipping][:promo] == 'band'
+        redirect_to new_promo_path, notice: "Enter your details to be promoted"
+      elsif params[:shipping][:promo] == 'business'
+        redirect_to new_biz_promo_path, notice: "Enter your details to be promoted"
       else
         redirect_to root_path, notice: 'Shipping info was successfully saved.'
       end

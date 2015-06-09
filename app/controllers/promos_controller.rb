@@ -1,4 +1,5 @@
 class PromosController < ApplicationController
+  before_filter :authenticate_user!, except: [:new, :create]
   before_action :set_promo, only: [:show, :edit, :update, :destroy]
 
   # GET /promos
@@ -26,10 +27,9 @@ class PromosController < ApplicationController
   def create
     @promo = Promo.new(promo_params)
     if @promo.save
-      redirect_to root_path, notice: 'We will promote you via twitter!'
+      redirect_to root_path, notice: 'We will promote you!'
     else
-      format.html { render :new }
-      format.json { render json: @promo.errors, status: :unprocessable_entity }
+      render :new
     end
   end
 

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606230100) do
+ActiveRecord::Schema.define(version: 20150609000333) do
+
+  create_table "biz_promos", force: :cascade do |t|
+    t.string   "business_name"
+    t.string   "twitter_handle"
+    t.string   "website_url"
+    t.string   "facebook_url"
+    t.string   "instagram_handle"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"

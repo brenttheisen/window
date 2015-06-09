@@ -1,17 +1,17 @@
 <%= simple_form_for(@promo) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <div class="row">  
-      <div class="col-md-4">  
-        <%= f.input :twitter_handle, input_html: {class: "form-control", value: "@"} %>
-        <%= f.input :band_name, input_html: {class: "form-control"} %>
-        <%= f.input :youtube_channel, input_html: {class: "form-control"} %>
-        <%= f.input :website_link, input_html: {class: "form-control"} %>
-        <%= f.input :itunes_link, input_html: {class: "form-control"} %>
-        <%= f.input :soundcloud_link, input_html: {class: "form-control"} %>
-        <%= f.input :fb_link, input_html: {class: "form-control"} %>
-        <%= f.input :insta_link, input_html: {class: "form-control"} %>
+  <div class="form-inputs form-group">
+    <div class="row form-group">  
+      <div class="col-md-4 form-group">  
+        <%= f.input :band_name, label: "Band Name", input_html: {class: "form-control"} %>
+        <%= f.input :twitter_handle, label: "Twitter Username", input_html: {class: "form-control", value: "@"} %>
+        <%= f.input :fb_link, label: "Facebook URL", input_html: {class: "form-control"} %>
+        <%= f.input :insta_link, label: "Instagram Username", input_html: {class: "form-control"} %>
+        <%= f.input :youtube_channel, label: "YouTube URL", input_html: {class: "form-control"} %>
+        <%= f.input :soundcloud_link, label: "Soundcloud URL", input_html: {class: "form-control"} %>
+        <%= f.input :itunes_link, label: "iTunes URL", input_html: {class: "form-control"} %>
+        <%= f.input :website_link, label: "Website URL", input_html: {class: "form-control"} %>
       </div>
     </div>
   </div>
