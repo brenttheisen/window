@@ -1,65 +1,59 @@
 <div class="container top-space">
-  <h2 class='text-center'>This is an <em><strong><u>annual</u></strong></em> subscription</h2>
-  <% if params[:plan_name] == 'window' %>
-    <div class="form-group text-center">
-      <h2>Window Sponsor</h2>
-        <h4>
-          <p>$20 Per Year</p>
-          <p>Grants one frame</p>
-          <p>Funds used for supplies</p>
-          <p></p>
-        </h4>
-        <%= form_tag subscribe_path(987654356789), method: :put do %>
-          <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+  <br>
+  <h1 class='text-center'>This is an <em><strong><u>annual</u></strong></em> subscription</h1>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-4 col-xs-12 col-sm-12">
+      <% if params[:plan_name] == 'window' %>
+        <div class="form-group text-center">
+            <%= form_tag subscribe_path(987654356789), method: :put do %>
+              <h2>Let us promote you for your contribution!</h2>
+              <h4>Promote my <u><strong>Band</strong></u>: <%= check_box_tag(:promo, "band") %></h4>
+              <h4>Promote my <u><strong>Business</strong></u>: <%= check_box_tag(:promo, "business") %></h4>
+              <h1>Window Sponsorship</h1>
+              <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="Window Sponsorship"
+                      data-amount="2000">
+              </script>
+            <% end %>
+        </div>
+      <% elsif params[:plan_name] == 'world'%>
+        <div class="form-group text-center">
+            <%= form_tag subscribe_path(8734002), method: :put do %>
+              <h2>Let us promote you for your contribution!</h2>
+              <h4>Promote my <u><strong>Band</strong></u>: <%= check_box_tag(:promo, "band") %></h4>
+              <h4>Promote my <u><strong>Business</strong></u>: <%= check_box_tag(:promo, "business") %></h4>
+              <h1>World Sponsorship</h1>
+              <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="World Sponsorship"
+                      data-amount="5000">
+              </script>
+            <% end %>
+        </div>
+      <% else%>
+        <div class="form-group text-center">
+          <%= form_tag subscribe_path(349867578729), method: :put do %>
+            <h2>Let us promote you for your contribution!</h2>
+            <h4>Promote my <u><strong>Band</strong></u>: <%= check_box_tag(:promo, "band") %></h4>
+            <h4>Promote my <u><strong>Business</strong></u>: <%= check_box_tag(:promo, "business") %></h4>
+            <h1>Star Sponsorship</h1>
+            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="Window Sponsorship"
-                  data-amount="2000">
-          </script>
-          <h4>Let us promote you for your contribution!</h4>
-          <p>Promote my band: <%= check_box_tag(:promo, "band") %></p>
-          <p>Promote my business: <%= check_box_tag(:promo, "business") %></p>
-        <% end %>
-    </div>
-  <% elsif params[:plan_name] == 'world'%>
-    <div class="form-group text-center">
-      <h2>World Sponsorship</h2>
-          <h4>
-            <p>Grants one frame</p>
-            <p>Funds used for supplies</p>
-            <p>W.o.W. T-Shirt</p>
-          </h4>
-        <%= form_tag subscribe_path(8734002), method: :put do %>
-          <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="World Sponsorship"
-                  data-amount="5000">
-          </script>
-          <h4>Let us promote you for your contribution!</h4>
-          <p>Promote my band: <%= check_box_tag(:promo, "band") %></p>
-          <p>Promote my business: <%= check_box_tag(:promo, "business") %></p>
-        <% end %>
-    </div>
-  <% else%>
-    <div class="form-group text-center">
-      <h2>Star Sponsor</h2>
-        <h4>
-          <p>Grants one frame</p>
-          <p>Funds used for supplies</p>
-          <p>W.o.W. T-Shirt</p>
-          <p>Website Featured Business Logo</p>
-        </h4>
-      <%= form_tag subscribe_path(349867578729), method: :put do %>
-        <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="Business Sponsorship"
-              data-amount="10000">
-        </script>
-        <h4>Let us promote you for your contribution!</h4>
-        <p>Promote my band: <%= check_box_tag(:promo, "band") %></p>
-        <p>Promote my business: <%= check_box_tag(:promo, "business") %></p>
+                  data-description="Business Sponsorship"
+                  data-amount="10000">
+            </script>
+          <% end %>
+        </div>
       <% end %>
+    </div>
+    <div class="col-md-8 col-xs-12 col-sm-12">
+      <%= image_tag "hoop.jpg", alt: 'Pink Girl', 'data-bgfit'=> 'cover', 'data-bgposition'=> 'center center', 'data-bgrepeat'=> 'no-repeat', class: 'img-responsive' %>
+    </div>
   </div>
-  <% end %>
+  <hr>
   <p class="text-center">All sponsorships are non-refundable</p>
   <p class='text-center'>To cancel your sponsorship subscription for next year<br> E-mail: <%= mail_to 'windowsofworlds@gmail.com' %></p>
 </div>
