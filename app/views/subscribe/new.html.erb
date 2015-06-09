@@ -9,8 +9,9 @@
         <div class="form-group text-center">
             <%= form_tag subscribe_path(987654356789), method: :put do %>
               <h2>Let us promote you for your contribution!</h2>
-              <h4>Promote my <u><strong>Band</strong></u>: <%= check_box_tag(:promo, "band") %></h4>
-              <h4>Promote my <u><strong>Business</strong></u>: <%= check_box_tag(:promo, "business") %></h4>
+              <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
+              <h4>Promote my <u><strong>Business</strong></u>: <%= radio_button_tag(:promo, "business") %></h4>
+              <h4>Remain Anonymous <%= radio_button_tag(:promo, "none") %></h4>
               <h1>Window Sponsorship</h1>
               <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -23,8 +24,9 @@
         <div class="form-group text-center">
             <%= form_tag subscribe_path(8734002), method: :put do %>
               <h2>Let us promote you for your contribution!</h2>
-              <h4>Promote my <u><strong>Band</strong></u>: <%= check_box_tag(:promo, "band") %></h4>
-              <h4>Promote my <u><strong>Business</strong></u>: <%= check_box_tag(:promo, "business") %></h4>
+              <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
+              <h4>Promote my <u><strong>Business</strong></u>: <%= radio_button_tag(:promo, "business") %></h4>
+              <h4>Remain Anonymous: <%= radio_button_tag(:promo, "none") %></h4>
               <h1>World Sponsorship</h1>
               <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -37,8 +39,9 @@
         <div class="form-group text-center">
           <%= form_tag subscribe_path(349867578729), method: :put do %>
             <h2>Let us promote you for your contribution!</h2>
-            <h4>Promote my <u><strong>Band</strong></u>: <%= check_box_tag(:promo, "band") %></h4>
-            <h4>Promote my <u><strong>Business</strong></u>: <%= check_box_tag(:promo, "business") %></h4>
+            <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
+            <h4>Promote my <u><strong>Business</strong></u>: <%= radio_button_tag(:promo, "business") %></h4>
+            <h4>Remain Anonymous: <%= radio_button_tag(:promo, "none") %></h4>
             <h1>Star Sponsorship</h1>
             <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -55,7 +58,8 @@
   </div>
   <hr>
   <p class="text-center">All sponsorships are non-refundable</p>
-  <p class='text-center'>To cancel your sponsorship subscription for next year<br> E-mail: <%= mail_to 'windowsofworlds@gmail.com' %></p>
+  <p class='text-center'>To cancel your sponsorship subscription for next year</p>
+  <p class="text-center"> E-mail: <%= mail_to 'windowsofworlds@gmail.com' %></p>
 </div>
 
 
