@@ -3,7 +3,8 @@
 
   <div class="form-inputs form-group">
     <div class="row form-group">  
-      <div class="col-md-4 form-group">  
+      <div class="col-md-4 form-group">
+        <%= f.input :logo, as: :file %>
         <%= f.input :business_name, label: "Business Name", input_html: {class: "form-control"} %>
         <%= f.input :twitter_handle, label: "Twitter Username", input_html: {class: "form-control", value: "@"} %>
         <%= f.input :website_url, label: "Website URL", input_html: {class: "form-control"} %>

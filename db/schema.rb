@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609000333) do
+ActiveRecord::Schema.define(version: 20150615190351) do
 
   create_table "biz_promos", force: :cascade do |t|
     t.string   "business_name"
@@ -19,8 +19,12 @@ ActiveRecord::Schema.define(version: 20150609000333) do
     t.string   "website_url"
     t.string   "facebook_url"
     t.string   "instagram_handle"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -40,8 +44,12 @@ ActiveRecord::Schema.define(version: 20150609000333) do
     t.string   "soundcloud_link"
     t.string   "fb_link"
     t.string   "insta_link"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "shippings", force: :cascade do |t|

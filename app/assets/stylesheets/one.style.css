@@ -342,8 +342,12 @@ a:hover {
 	color: #777;
 }
 
+.one-page-header.top-nav-collapse .navbar-nav > li > a:hover {
+	color: #EF4823;
+}
+
 .one-page-header.top-nav-collapse .navbar-brand {
-	color: #777 !important;	
+	color: #777;	
 }
 
 /*Navbar Toggle*/

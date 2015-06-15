@@ -65,6 +65,6 @@ class BizPromosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def biz_promo_params
-      params.require(:biz_promo).permit(:business_name, :twitter_handle, :website_url, :facebook_url, :instagram_handle)
+      params.require(:biz_promo).permit(:logo, :business_name, :twitter_handle, :website_url, :facebook_url, :instagram_handle)
     end
 end

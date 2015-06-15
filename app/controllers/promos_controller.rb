@@ -65,6 +65,6 @@ class PromosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promo_params
-      params.require(:promo).permit(:twitter_handle, :band_name, :youtube_channel, :website_link, :itunes_link, :soundcloud_link, :fb_link, :insta_link)
+      params.require(:promo).permit(:logo, :twitter_handle, :band_name, :youtube_channel, :website_link, :itunes_link, :soundcloud_link, :fb_link, :insta_link)
     end
 end
