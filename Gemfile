@@ -13,6 +13,7 @@ end
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem "paperclip", "~> 4.2"
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass'
 gem 'simple_form', '~> 3.0.0.rc'
