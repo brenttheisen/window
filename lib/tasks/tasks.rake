@@ -22,3 +22,29 @@ namespace :tweet do
     puts "Tweeted Business Info"
   end
 end
+
+
+namespace :payout do 
+  desc "Payout"
+  task all: :environment do
+    bal = Stripe::Balance.retrieve()
+
+    total = bal.available[0].amount
+    freds15 = (total * 15) / 100
+    wow85 = total - freds15
+    Stripe::Transfer.create(
+      :amount => freds15,
+      :currency => "usd",
+      :recipient => 'rp_16HKUsHmGrqXGSKnHPSMJ0Hf',
+      :description => "Transfer for Fred 15% ownership of Windows of Worlds"
+    )
+
+    Stripe::Transfer.create(
+      :amount => wow85,
+      :currency => "usd",
+      :recipient => 'rp_16HKj8HmGrqXGSKnsKAcBGHu',
+      :description => "Transfer for 100State 85% ownership of Windows of Worlds"
+    )
+  end
+  puts "Payout Complete"
+end

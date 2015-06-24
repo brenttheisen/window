@@ -12,9 +12,14 @@ every(24.hours, 'Tweet Band Info') {
     `rake tweet:band`
   }
 
-  # ______Tweeting Business
+# ______Tweeting Business
 every(24.hours, 'Tweet Band Info') {
     `rake tweet:biz`
+  }
+
+# ______Payout
+every(1.week, 'Payout') {
+    `rake payout:all`
   }
 
 end

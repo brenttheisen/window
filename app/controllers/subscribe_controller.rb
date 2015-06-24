@@ -27,16 +27,5 @@ class SubscribeController < ApplicationController
     else
       redirect_to root_path, notice: "Thanks for supporting"
     end
-
-    # Stripe::Transfer.create(
-    #   :amount => (Stripe::Plan.retrieve(params[:id]).amount * 15)/100,
-    #   :currency => "usd",
-    #   :recipient => 'rp_168eeSKsa3SDdBb0cxu6BvLW',
-    #   :description => "Transfer for Fred 15%"
-    # )
   end
 end
-
-
-
-# Stripe::Customer.retrieve(customer.id).subscriptions.all().data[0].plan.statement_descriptor
