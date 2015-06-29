@@ -7,15 +7,15 @@ module Clockwork
   end
 
 
-# ______Tweeting Bands________
-every(24.hours, 'Tweet Band Info') {
-    `rake tweet:band`
-  }
+# # ______Tweeting Bands
+# every(24.hours, 'Tweet Band Info') {
+#     `rake tweet:band`
+#   }
 
-# ______Tweeting Business
-every(24.hours, 'Tweet Band Info') {
-    `rake tweet:biz`
-  }
+# # ______Tweeting Business
+# every(24.hours, 'Tweet Band Info') {
+#     `rake tweet:biz`
+#   }
 
 # ______Payout
 every(1.week, 'Payout') {

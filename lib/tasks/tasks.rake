@@ -27,24 +27,29 @@ end
 namespace :payout do 
   desc "Payout"
   task all: :environment do
-    bal = Stripe::Balance.retrieve()
+    bal = Stripe::Balance.retrieve().available[0].amount
+    if bal > 0
+      freds15 = (bal * 15) / 100
+      wow85 = bal - freds15
 
-    total = bal.available[0].amount
-    freds15 = (total * 15) / 100
-    wow85 = total - freds15
-    Stripe::Transfer.create(
-      :amount => freds15,
-      :currency => "usd",
-      :recipient => 'rp_16HKUsHmGrqXGSKnHPSMJ0Hf',
-      :description => "Transfer for Fred 15% ownership of Windows of Worlds"
-    )
+      Stripe::Transfer.create(
+        :amount => freds15,
+        :currency => "usd",
+        :recipient => 'rp_16HKy9HmGrqXGSKnKE8ZW1gJ',
+        :description => "Transfer for Fred 15% ownership of Windows of Worlds"
+      )
+      # git commit -m 'procfile added, tweets are configured but not live, my 15% payout is live need to configure for 100states 85%'
 
-    Stripe::Transfer.create(
-      :amount => wow85,
-      :currency => "usd",
-      :recipient => 'rp_16HKj8HmGrqXGSKnsKAcBGHu',
-      :description => "Transfer for 100State 85% ownership of Windows of Worlds"
-    )
+      # Stripe::Transfer.create(
+      #   :amount => wow85,
+      #   :currency => "usd",
+      #   :recipient => 'rp_swapmeout',
+      #   :description => "Transfer for 100State 85% ownership of Windows of Worlds"
+      # )
+      puts "Payout Complete"
+    else
+      puts "No Payout This Week"
+    end
+    puts "Transfers Completed"
   end
-  puts "Payout Complete"
 end
