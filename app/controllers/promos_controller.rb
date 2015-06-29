@@ -15,6 +15,10 @@ class PromosController < ApplicationController
 
   # GET /promos/new
   def new
+    unless !params[:paid].nil?
+      flash[:error] = "Please make a payment to recieve a shirt"
+      redirect_to root_path
+    end
     @promo = Promo.new
   end
 

@@ -15,13 +15,12 @@ class SubscribeController < ApplicationController
       plan: params[:id],
       description: 'Windows Of Worlds'
     )
-    
     if customer.subscriptions.data[0].plan.id == '8734002' || customer.subscriptions.data[0].plan.id == '349867578729'
-      redirect_to new_shipping_path(email: customer.email, promo: params[:promo]), notice: "Thank You For Your Support"
+      redirect_to new_shipping_path(email: customer.email, promo: params[:promo], paid: true), notice: "Thank You For Your Support"
     elsif params[:promo] == 'band'
-      redirect_to new_promo_path, notice: "Thank You For Your Support"
+      redirect_to new_promo_path(paid: true), notice: "Thank You For Your Support"
     elsif params[:promo] == 'business'
-      redirect_to new_biz_promo_path, notice: "Thank You For Your Support"
+      redirect_to new_biz_promo_path(paid: true), notice: "Thank You For Your Support"
     else
       redirect_to root_path, notice: "Thanks for supporting"
     end

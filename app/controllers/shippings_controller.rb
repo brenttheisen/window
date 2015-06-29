@@ -15,6 +15,10 @@ class ShippingsController < ApplicationController
 
   # GET /shippings/new
   def new
+    unless !params[:paid].nil?
+      flash[:error] = "Please make a payment to recieve a shirt"
+      redirect_to root_path
+    end
     @email = params[:email]
     @shipping = Shipping.new
     @promo = params[:promo]
@@ -30,9 +34,9 @@ class ShippingsController < ApplicationController
     @shipping = Shipping.new(shipping_params)
     if @shipping.save
       if params[:shipping][:promo] == 'band'
-        redirect_to new_promo_path, notice: "Enter your details to be promoted"
+        redirect_to new_promo_path(paid: true), notice: "Enter your details to be promoted"
       elsif params[:shipping][:promo] == 'business'
-        redirect_to new_biz_promo_path, notice: "Enter your details to be promoted"
+        redirect_to new_biz_promo_path(paid: true), notice: "Enter your details to be promoted"
       else
         redirect_to root_path, notice: 'Shipping info was successfully saved.'
       end

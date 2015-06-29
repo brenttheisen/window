@@ -5,6 +5,9 @@ twitter = Twitter::REST::Client.new do |config|
   config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 end
 
+#Login: windowsofworlds
+#Pass: lotsofjunk
+
 namespace :tweet do 
   desc "Tweet Band Info"
   task band: :environment do
