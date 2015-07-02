@@ -152,17 +152,6 @@ a:hover {
 	text-transform: uppercase;
 }
 
-.one-page-header .navbar-nav > li > a:before {
-	left: 0px;
-	z-index: 2;
-	color: #eee;
-	font-size: 4px;
-  content: "\f10c";
-	margin-right: 6px;
-	position: absolute;
-  font-family: FontAwesome;
-}
-
 .one-page-header .navbar-nav > li.home > a:before {
 	content: "";
 }

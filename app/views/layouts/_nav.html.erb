@@ -15,9 +15,14 @@
                     <li class="page-scroll">
                         <a href="/#about">About Us</a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="/#services">Support</a>
-                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Support
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/#services">Donate Now</a></li>
+                        </ul>
+                    </li> 
                     <li class="page-scroll">
                         <a href="/#team">The Team</a>
                     </li>
@@ -29,7 +34,7 @@
                     </li> 
                     <% if current_user %>
                         <li><%= link_to "Sign Out", destroy_user_session_path, class: 'btn btn-u-lg btn-danger', method: :delete%></li> 
-                    <% end %>                   
+                    <% end %> 
                 </ul>
             </div>
         </div>
