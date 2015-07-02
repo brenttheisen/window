@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :subscribe, only: [:new, :update]
   resources :shippings
   get 'gallery' => 'home#gallery'
+  get 'bands' => 'home#bands'
+  get 'businesses' => 'home#businesses'
 end

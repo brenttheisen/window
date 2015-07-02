@@ -1,0 +1,11 @@
+<div class="container top-space">
+  <h1 class="text-center">Band Donations</h1>
+  <% @bands.each do |band| %>
+    <div clas='row'> 
+      <div class='col-md-3'> 
+        <h2><%= band.band_name %></h2>
+        <%= image_tag(band.logo.url(:medium)) %>
+      </div>
+    </div>
+  <% end %>
+</div>
