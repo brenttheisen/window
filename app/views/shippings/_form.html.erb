@@ -2,20 +2,17 @@
   <% if @shipping.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@shipping.errors.count, "error") %> prohibited this shipping from being saved:</h2>
-
-      <ul>
       <% @shipping.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="alert alert-danger">  
+          <%= message %>
+        </div>
       <% end %>
-      </ul>
     </div>
   <% end %>
   <div class="row">
       <div class="col-md-6">
-        <%= f.input :name, input_html: {class: "form-control"}%>
-        <%= f.input :email, input_html: {class: "form-control", value: @email}  %>
-        <%= f.input :address, input_html: {class: "form-control"} %>
-        <%= f.input :phone, input_html: {class: "form-control"} %>
+        <%= f.input :email, label: "Email (Required)", input_html: {class: "form-control", value: @email}  %>
+        <%= f.input :address, label: "Addredd (Required)", input_html: {class: "form-control"} %>
         <%= f.input :promo, as: :hidden, input_html: {class: "form-control", value: @promo} %>
       </div>
   </div>

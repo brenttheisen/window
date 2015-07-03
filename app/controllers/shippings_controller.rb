@@ -42,7 +42,6 @@ class ShippingsController < ApplicationController
       end
     else
        render :new
-       render json: @shipping.errors, status: :unprocessable_entity
     end
   end
 

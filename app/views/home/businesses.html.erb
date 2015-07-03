@@ -1,10 +1,20 @@
 <div class="container top-space">
-  <h1 class="text-center">Business Donations</h1>
+  <h1 class="text-center">Business Sponsors</h1>
   <% @bizs.each do |biz| %>
     <div clas='row'> 
-      <div class='col-md-3'> 
-        <h2><%= biz.business_name %></h2>
+      <div class='col-md-4'> 
+        <h2 class='text-center'><%= biz.business_name %></h2>
         <%= image_tag(biz.logo.url(:medium)) %>
+        <br>
+        <br>
+        <div class="text-center">
+          <p> Twitter: <%= link_to biz.twitter_handle, "https://twitter.com/#{biz.twitter_handle}" %></p>
+          <% if biz.website_url.empty? %>
+            <p> Website: None</p>
+          <% else %>
+            <p> Website: <%= biz.website_url %></p>
+            <% end %>
+        </div>
       </div>
     </div>
   <% end %>

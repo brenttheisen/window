@@ -31,7 +31,7 @@ class PromosController < ApplicationController
   def create
     @promo = Promo.new(promo_params)
     if @promo.save
-      redirect_to root_path, notice: 'We will promote you!'
+      redirect_to "/bands", notice: 'We will promote you!'
     else
       render :new
     end

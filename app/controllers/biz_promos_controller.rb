@@ -31,7 +31,7 @@ class BizPromosController < ApplicationController
   def create
     @biz_promo = BizPromo.new(biz_promo_params)
     if @biz_promo.save
-      redirect_to root_path, notice: 'We will promote you!'
+      redirect_to "/businesses", notice: 'We will promote your Business!'
     else
       render :new
     end

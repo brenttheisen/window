@@ -1,10 +1,20 @@
 <div class="container top-space">
-  <h1 class="text-center">Band Donations</h1>
+  <h1 class="text-center">Band Sponsors</h1>
   <% @bands.each do |band| %>
     <div clas='row'> 
-      <div class='col-md-3'> 
-        <h2><%= band.band_name %></h2>
+      <div class='col-md-4'> 
+        <h2 class='text-center'><%= band.band_name %></h2>
         <%= image_tag(band.logo.url(:medium)) %>
+        <br>
+        <br>
+        <div class="text-center">
+          <p> Twitter: <%= link_to band.twitter_handle, "https://twitter.com/#{band.twitter_handle}" %></p>
+          <% if band.website_link.empty? %>
+            <p> Website: None</p>
+          <% else %>
+            <p> Website: <%= band.website_link %></p>
+            <% end %>
+        </div>
       </div>
     </div>
   <% end %>
