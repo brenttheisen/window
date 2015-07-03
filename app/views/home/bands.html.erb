@@ -8,7 +8,19 @@
         <br>
         <br>
         <div class="text-center">
-          <p> Twitter: <%= link_to band.twitter_handle, "https://twitter.com/#{band.twitter_handle}" %></p>
+          <ul class="social-icons">
+            <% if !band.fb_link.empty? %>
+              <li><%= link_to band.fb_link, "#{band.fb_link}/", 'target'=>"_blank", 'data-original-title'=>"Facebook", class: "social_facebook rounded-x" %></li>
+            <% end %>
+
+            <% if !band.twitter_handle.empty? %>
+              <li><%= link_to band.twitter_handle, "https://twitter.com/#{band.twitter_handle}/", 'target'=>"_blank", 'data-original-title'=>"Twitter", class: "social_twitter rounded-x" %></li>
+            <% end %>
+            
+            <% if !band.insta_link.empty? %>
+              <li><%= link_to band.insta_link, "https://instagram.com/#{band.insta_link}/", 'target'=>"_blank", 'data-original-title'=>"Instagram", class: "social_instagram rounded-x" %></li>
+            <% end %>
+        </ul>
           <% if band.website_link.empty? %>
             <p> Website: None</p>
           <% else %>

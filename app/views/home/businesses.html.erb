@@ -8,12 +8,26 @@
         <br>
         <br>
         <div class="text-center">
-          <p> Twitter: <%= link_to biz.twitter_handle, "https://twitter.com/#{biz.twitter_handle}" %></p>
+          <ul class="social-icons">
+            <% if !biz.facebook_url.empty? %>
+              <li><%= link_to biz.facebook_url, "#{biz.facebook_url}/", 'target'=>"_blank", 'data-original-title'=>"Facebook", class: "social_facebook rounded-x" %></li>
+            <% end %>
+
+            <% if !biz.twitter_handle.empty? %>
+              <li><%= link_to biz.twitter_handle, "https://twitter.com/#{biz.twitter_handle}/", 'target'=>"_blank", 'data-original-title'=>"Twitter", class: "social_twitter rounded-x" %></li>
+            <% end %>
+            
+            <% if !biz.instagram_handle.empty? %>
+              <li><%= link_to biz.instagram_handle, "https://instagram.com/#{biz.instagram_handle}/", 'target'=>"_blank", 'data-original-title'=>"Instagram", class: "social_instagram rounded-x" %></li>
+            <% end %>
+
+        </ul>
           <% if biz.website_url.empty? %>
             <p> Website: None</p>
           <% else %>
             <p> Website: <%= biz.website_url %></p>
-            <% end %>
+          <% end %>
+
         </div>
       </div>
     </div>

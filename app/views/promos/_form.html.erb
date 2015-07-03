@@ -3,16 +3,16 @@
 
   <div class="form-inputs form-group">
     <div class="row form-group">  
-      <div class="col-md-4 form-group">  
+      <div class="col-md-4 col-sm-12 col-xs-12 form-group">  
         <%= f.input :logo, as: :file %>
-        <%= f.input :band_name, label: "Band Name", input_html: {class: "form-control"} %>
-        <%= f.input :twitter_handle, label: "Twitter Username", input_html: {class: "form-control"} %>
-        <%= f.input :fb_link, label: "Facebook URL", input_html: {class: "form-control"} %>
-        <%= f.input :insta_link, label: "Instagram Username", input_html: {class: "form-control"} %>
-        <%= f.input :youtube_channel, label: "YouTube URL", input_html: {class: "form-control"} %>
-        <%= f.input :soundcloud_link, label: "Soundcloud URL", input_html: {class: "form-control"} %>
-        <%= f.input :itunes_link, label: "iTunes URL", input_html: {class: "form-control"} %>
-        <%= f.input :website_link, label: "Website URL", input_html: {class: "form-control"} %>
+        <%= f.input :band_name, label: "Band Name",placeholder: "Windows Of Worlds", input_html: {class: "form-control"} %>
+        <%= f.input :twitter_handle, label: "Twitter Username", placeholder: 'windowsofworlds', input_html: {class: "form-control"} %>
+        <%= f.input :fb_link, label: "Facebook URL", placeholder: 'https://www.facebook.com/windowsofworlds', input_html: {class: "form-control"} %>
+        <%= f.input :insta_link, label: "Instagram Username", placeholder: 'windowsofworlds', input_html: {class: "form-control"} %>
+        <%= f.input :youtube_channel, label: "YouTube URL", placeholder: 'https://www.youtube.com/watch?v=windows', input_html: {class: "form-control"} %>
+        <%= f.input :soundcloud_link, label: "Soundcloud URL", placeholder: 'https://soundcloud.com/windowsofworlds', input_html: {class: "form-control"} %>
+        <%= f.input :itunes_link, label: "iTunes URL", placeholder: 'https://itunes.apple.com/us/album/windowsofworlds/id3434', input_html: {class: "form-control"} %>
+        <%= f.input :website_link, label: "Website URL", placeholder: 'http://www.windowsofworlds.com/', input_html: {class: "form-control"} %>
       </div>
     </div>
   </div>
