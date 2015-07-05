@@ -8,45 +8,45 @@
       <% if params[:plan_name] == 'window' %>
         <div class="form-group text-center">
             <%= form_tag subscribe_path(987654356789), method: :put do %>
-              <h2>Let us promote you for your contribution!</h2>
+              <h1>Window Sponsorship</h1>
+              <h4>Individual: <%= radio_button_tag(:promo, "individual") %></h4>
               <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
               <h4>Promote my <u><strong>Business</strong></u>: <%= radio_button_tag(:promo, "business") %></h4>
               <h4>Remain Anonymous <%= radio_button_tag(:promo, "none") %></h4>
-              <h1>Window Sponsorship</h1>
               <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-description="Window Sponsorship"
-                      data-amount="2000">
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Window Sponsorship"
+                data-amount="2000">
               </script>
             <% end %>
         </div>
       <% elsif params[:plan_name] == 'world'%>
         <div class="form-group text-center">
             <%= form_tag subscribe_path(8734002), method: :put do %>
-              <h2>Let us promote you for your contribution!</h2>
+              <h1>World Sponsorship</h1>
+              <h4>Individual: <%= radio_button_tag(:promo, "individual") %></h4>
               <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
               <h4>Promote my <u><strong>Business</strong></u>: <%= radio_button_tag(:promo, "business") %></h4>
               <h4>Remain Anonymous: <%= radio_button_tag(:promo, "none") %></h4>
-              <h1>World Sponsorship</h1>
               <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-description="World Sponsorship"
-                      data-amount="5000">
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="World Sponsorship"
+                data-amount="5000">
               </script>
             <% end %>
         </div>
       <% else%>
         <div class="form-group text-center">
           <%= form_tag subscribe_path(349867578729), method: :put do %>
-            <h2>Let us promote you for your contribution!</h2>
+            <h1>Star Sponsorship</h1>
+            <h4>Individual: <%= radio_button_tag(:promo, "individual") %></h4>
             <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
             <h4>Promote my <u><strong>Business</strong></u>: <%= radio_button_tag(:promo, "business") %></h4>
             <h4>Remain Anonymous: <%= radio_button_tag(:promo, "none") %></h4>
-            <h1>Star Sponsorship</h1>
             <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="Star Sponsorship"
-                  data-amount="10000">
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Star Sponsorship"
+              data-amount="10000">
             </script>
           <% end %>
         </div>
