@@ -1,7 +1,6 @@
 <%= simple_form_for(@shipping) do |f| %>
   <% if @shipping.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@shipping.errors.count, "error") %> prohibited this shipping from being saved:</h2>
       <% @shipping.errors.full_messages.each do |message| %>
         <div class="alert alert-danger">  
           <%= message %>
@@ -9,15 +8,12 @@
       <% end %>
     </div>
   <% end %>
-  <div class="row">
-      <div class="col-md-6">
-        <%= f.input :email, label: "Email (Required)",placeholder: 'contact@windowsofworlds.com', input_html: {class: "form-control", value: @email}  %>
-        <%= f.input :address, label: "Address (Required)", placeholder: '30 West Miffilin Madison WI 53703', input_html: {class: "form-control"} %>
-        <%= f.input :promo, as: :hidden, input_html: {class: "form-control", value: @promo} %>
-      </div>
-  </div>
+    <%= f.input :name, label: "Full Name (Required)", placeholder: 'John G Doe',input_html: {class: "form-control"} %>
+    <%= f.input :email, label: "Email (Required)",placeholder: 'contact@windowsofworlds.com', input_html: {class: "form-control", value: @email}  %>
+    <%= f.input :address, label: "Address (Required)", placeholder: '30 West Miffilin Madison WI 53703', input_html: {class: "form-control"} %>
+    <%= f.input :promo, as: :hidden, input_html: {class: "form-control", value: @promo} %>
   <br>
   <div class="actions">
-    <%= f.submit "Submit", class: 'btn btn-u' %>
+    <%= f.submit "Submit", class: 'btn btn-u col-md-12 col-sm-12 col-xs-12' %>
   </div>
 <% end %>

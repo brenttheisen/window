@@ -1,15 +1,4 @@
 <%= form_for(@contact) do |f| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
-      <ul>
-      <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <!-- Contact Section -->
   <section id="contact" class="contacts-section">
       <div class="container content-lg">
@@ -32,6 +21,16 @@
               </div>
 
               <div class="col-md-6">
+              <% if @contact.errors.any? %>
+                <div id="error_explanation">
+                  <% @contact.errors.full_messages.each do |message| %>
+                    <div class="alert alert-danger">  
+                      <%= message %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+
                   <form action="/contacts" method="post" id="sky-form3" class="sky-form contact-style">
                       <fieldset>
                           <label>Name</label>
