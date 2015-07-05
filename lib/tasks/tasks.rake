@@ -34,21 +34,21 @@ namespace :payout do
     if bal > 0
       freds15 = (bal * 15) / 100
       wow85 = bal - freds15
-
+      
       Stripe::Transfer.create(
         :amount => freds15,
         :currency => "usd",
-        :recipient => 'rp_16HKy9HmGrqXGSKnKE8ZW1gJ',
+        :recipient => 'rp_16LJ6xHmGrqXGSKneRTKsnRN',
         :description => "Transfer for Fred 15% ownership of Windows of Worlds"
       )
       # git commit -m 'procfile added, tweets are configured but not live, my 15% payout is live need to configure for 100states 85%'
 
-      # Stripe::Transfer.create(
-      #   :amount => wow85,
-      #   :currency => "usd",
-      #   :recipient => 'rp_swapmeout',
-      #   :description => "Transfer for 100State 85% ownership of Windows of Worlds"
-      # )
+      Stripe::Transfer.create(
+        :amount => wow85,
+        :currency => "usd",
+        :recipient => 'rp_16KwYzHmGrqXGSKnBruq6ufY',
+        :description => "Transfer for 100State 85% ownership of Windows of Worlds"
+      )
       puts "Payout Complete"
     else
       puts "No Payout This Week"
