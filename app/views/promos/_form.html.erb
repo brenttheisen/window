@@ -1,5 +1,13 @@
 <%= simple_form_for @promo, html: {multipart: true} do |f| %>
-  <%= f.error_notification %>
+  <% if @promo.errors.any? %>
+  <div id="error_explanation">
+    <% @promo.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">  
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
   <div class="form-inputs form-group">
     <div class="row form-group">  
