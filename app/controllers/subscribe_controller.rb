@@ -1,8 +1,8 @@
 require 'stripe'
 class SubscribeController < ApplicationController
   def new
-    unless (params[:plan_name] == "window" || params[:plan_name] == "world" || params[:plan_name] == "business")
-      flash[:notice] = "Please select a plan to get started."
+    unless (params[:plan_name] == "window" || params[:plan_name] == "world" || params[:plan_name] == "star" || params[:plan_name] == 'window_paid' || params[:plan_name] == 'world_paid' || params[:plan_name] == 'star_paid')
+      flash[:error] = "Please select a plan to get started."
       redirect_to root_path
     end
   end
