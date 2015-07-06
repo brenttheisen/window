@@ -1,5 +1,8 @@
 class BizPromo < ActiveRecord::Base
-  has_attached_file :logo, styles: { medium: "350x350#", thumb: "100x100>#" }, default_url: "https://cdn3.iconfinder.com/data/icons/abstract-1/512/no_image-512.png"
+  has_attached_file :logo, styles: { 
+    medium: "350x350#", 
+    thumb: "100x100>#" }, 
+    default_url: "default.png"
   validates_attachment_content_type :logo, { :content_type => ["image/jpeg", "image/gif", "image/png"] }
-  validates :business_name, :logo, presence: true
+  validates :business_name, presence: true
 end
