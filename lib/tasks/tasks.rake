@@ -39,7 +39,7 @@ namespace :payout do
         :amount => freds15,
         :currency => "usd",
         :recipient => 'rp_16LJ6xHmGrqXGSKneRTKsnRN',
-        :description => "Transfer for Fred 15% ownership of Windows of Worlds"
+        :description => "Fred 15% ownership of Windows of Worlds"
       )
       # git commit -m 'procfile added, tweets are configured but not live, my 15% payout is live need to configure for 100states 85%'
 
@@ -47,7 +47,7 @@ namespace :payout do
         :amount => wow85,
         :currency => "usd",
         :recipient => 'rp_16KwYzHmGrqXGSKnBruq6ufY',
-        :description => "Transfer for 100State 85% ownership of Windows of Worlds"
+        :description => "100State 85% ownership of Windows of Worlds"
       )
       puts "Payout Complete"
     else
