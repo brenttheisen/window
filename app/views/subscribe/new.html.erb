@@ -8,6 +8,7 @@
       <% if params[:plan_name] == 'window' %>
         <div class="form-group text-center">
             <%= form_tag subscribe_path(987654356789), method: :put do %>
+              <%= image_tag "window.png", class: 'img-responsive icons', 'data-bgfit'=> 'cover', 'data-bgposition'=> 'center center', 'data-bgrepeat'=> 'no-repeat'   %>
               <h1>Window Sponsorship</h1>
               <h4>Individual: <%= radio_button_tag(:promo, "individual") %></h4>
               <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
@@ -22,6 +23,7 @@
       <% elsif params[:plan_name] == 'world'%>
         <div class="form-group text-center">
             <%= form_tag subscribe_path(8734002), method: :put do %>
+              <%= image_tag "world.png", class: 'img-responsive icons', 'data-bgfit'=> 'cover', 'data-bgposition'=> 'center center', 'data-bgrepeat'=> 'no-repeat'   %>
               <h1>World Sponsorship</h1>
               <h4>Individual: <%= radio_button_tag(:promo, "individual") %></h4>
               <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
@@ -36,6 +38,7 @@
       <% elsif params[:plan_name] == 'star'%>
         <div class="form-group text-center">
           <%= form_tag subscribe_path(349867578729), method: :put do %>
+            <%= image_tag "star.png", class: 'img-responsive icons', 'data-bgfit'=> 'cover', 'data-bgposition'=> 'center center', 'data-bgrepeat'=> 'no-repeat'   %>
             <h1>Star Sponsorship</h1>
             <h4>Individual: <%= radio_button_tag(:promo, "individual") %></h4>
             <h4>Promote my <u><strong>Band</strong></u>: <%= radio_button_tag(:promo, "band") %></h4>
