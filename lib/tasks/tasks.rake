@@ -56,3 +56,70 @@ namespace :payout do
     puts "Transfers Completed"
   end
 end
+
+
+namespace :scrape do
+  task arts_gov: :environment do
+    scrape = Wombat.crawl do
+      base_url "http://arts.gov"
+      path "/partners/state-regional"
+
+      results "xpath=//*[@id='node-page-14015']/div[1]/div/div/div/p", :iterator do
+        company "xpath=a/strong"
+        link "xpath=a/@href"
+        email "xpath=a[2]/@href"
+      end
+    end
+    scrape['results'].each do |company|
+      if !company['company'].nil? && !company['link'].nil? && !company['email'].nil?
+        Company.create!(company: company['company'], link: company['link'], email: company['email'].gsub("mailto:", ''))
+      end
+    end
+  end
+
+  task wiki: :environment do
+    scrape = Wombat.crawl do
+      base_url "https://en.wikipedia.org"
+      path "/wiki/Category:Arts_organizations_based_in_the_United_States"
+
+      company({xpath: '//*[@id="mw-pages"]/div/div/div/ul/li/a'}, :list)
+    end
+    scrape['company'].each do |company|
+      Company.find_or_create_by(company: company) 
+    end
+  end
+
+  task si: :environment do
+    scrape = Wombat.crawl do
+      base_url "http://www.si.edu"
+      path "/mci/english/learn_more/taking_care/artorgs.html"
+
+      results 'xpath=//*[@id="site_sections"]/p', :iterator do
+        company 'css=a'
+        link 'css=a/@href'
+      end
+    end
+    scrape['results'].each do |company|
+      if !company['company'].nil? && !company['link'].nil?
+        Company.create!(company: company['company'], link: company['link'])
+      end
+    end
+  end
+
+  task nas: :environment do
+    scrape = Wombat.crawl do
+      base_url "http://thejustinwayneshow.com"
+      path "/about/artists/"
+
+      results "xpath=//*[@class='linkcat']/div/ul/li", :iterator do
+        company "xpath=a"
+        link 'xpath=a/@href'
+      end
+    end
+    scrape['results'].each do |company|
+      if !company['company'].nil? && !company['link'].nil?
+        Company.create!(company: company['company'], link: company['link'])
+      end
+    end
+  end
+end
