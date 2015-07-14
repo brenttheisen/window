@@ -15,7 +15,7 @@
         <div class="text-center">
           <ul class="social-icons">
             <% if !band.fb_link.empty? %>
-              <li><%= link_to band.fb_link, "https://www.facebook.com/#{band.fb_link}", 'target'=>"_blank", 'data-original-title'=>"Facebook", class: "social_facebook rounded-x" %></li>
+              <li><%= link_to band.fb_link, "#{band.fb_link}/", 'target'=>"_blank", 'data-original-title'=>"Facebook", class: "social_facebook rounded-x" %></li>
             <% end %>
 
             <% if !band.twitter_handle.empty? %>
