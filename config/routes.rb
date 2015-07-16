@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'company/index'
+
   resources :biz_promos
 
   resources :promos
