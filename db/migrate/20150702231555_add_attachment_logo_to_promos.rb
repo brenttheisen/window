@@ -1,11 +1,9 @@
 class AddAttachmentLogoToPromos < ActiveRecord::Migration
   def self.up
-    change_table :promos do |t|
-      t.attachment :logo
-    end
+    add_column :promos, :logo, :string
   end
 
   def self.down
-    remove_attachment :promos, :logo
+    remove_column :promos, :logo
   end
 end

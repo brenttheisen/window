@@ -1,11 +1,9 @@
 class AddAttachmentLogoToBizPromos < ActiveRecord::Migration
   def self.up
-    change_table :biz_promos do |t|
-      t.attachment :logo
-    end
+    add_column :biz_promos, :logo, :string
   end
 
   def self.down
-    remove_attachment :biz_promos, :logo
+    remove_column :biz_promos, :logo
   end
 end
