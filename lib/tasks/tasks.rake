@@ -5,7 +5,7 @@ twitter = Twitter::REST::Client.new do |config|
   config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 end
 
-Stripe.api_key = Rails.configuration.stripe[:secret_key]
+Stripe.api_key = ENV['SECRET_KEY_LIVE']
 
 #Login: windowsofworlds
 #Pass: lotsofjunk
