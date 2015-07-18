@@ -5,6 +5,8 @@ twitter = Twitter::REST::Client.new do |config|
   config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 end
 
+Stripe.api_key = Rails.configuration.stripe[:secret_key]
+
 #Login: windowsofworlds
 #Pass: lotsofjunk
 
@@ -31,7 +33,6 @@ namespace :payout do
   desc "Payout"
   namespace :all do 
     bal = Stripe::Balance.retrieve().available[0].amount
-
     if bal > 0
       task fred: :environment do
         freds15 = (bal * 15) / 100
