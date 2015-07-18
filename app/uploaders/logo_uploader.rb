@@ -1,10 +1,6 @@
 class LogoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  def cache_dir
-    "#{Rails.root}/tmp/uploads"
-  end
-
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -19,11 +15,9 @@ class LogoUploader < CarrierWave::Uploader::Base
  version :p200x200 do
    process :resize_and_pad => [200,200]
  end
-
   version :p350x350 do
    process :resize_to_fill => [350,350]
  end
-
  version :p531x157 do
    process :resize_and_pad => [531,157]
  end
