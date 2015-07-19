@@ -1871,7 +1871,7 @@
   padding: 100px 0;
   position: relative;
   text-align: center;
-  background: url(faces.jpg) 50% 0 repeat fixed;
+  background: url(trees.jpg) 50% 0 repeat fixed;
 }
 
 .parallax-quote:after {
@@ -1978,7 +1978,7 @@
 /*Parallax Team
 ------------------------------------*/
 .parallax-team {
-  background: url(faces.jpg) 50% 0 repeat fixed;  
+  background: url(trees.jpg) 50% 0 repeat fixed;  
 }
 
 .parallax-team,
@@ -1999,7 +1999,7 @@
 
 /*Parallax Team*/
 .parallax-team {
-  background: url(faces.jpg) 50% 0 repeat fixed;  
+  background: url(trees.jpg) 50% 0 repeat fixed;  
 }
 
 .parallax-team,
