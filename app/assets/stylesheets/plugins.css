@@ -155,7 +155,6 @@
   font-weight: 200;
   padding: 6px 75px;
   position: relative;
-  border-top: solid 1px #fff;
   border-bottom: solid 1px #fff;
 }
 
@@ -182,7 +181,7 @@
   height: 1px;
   width: 100px;
   bottom: -10px;
-  background: #fff;
+  background: #EF4823;
   margin-left: -50px;
   position: absolute;
 }
