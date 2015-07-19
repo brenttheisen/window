@@ -7,7 +7,7 @@
   </div>
   <% @bands.each do |band| %>
     <div clas='row'> 
-      <div class='col-md-4'> 
+      <div class='col-md-4 col-sm-12 col-xs-12'> 
         <h2 class='text-center'><%= band.band_name %></h2>
         <%= image_tag(band.logo.url(:p350x350)) %>
         <br>

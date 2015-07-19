@@ -7,7 +7,7 @@
   </div>
   <% @bizs.each do |biz| %>
     <div clas='row'> 
-      <div class='col-md-4'> 
+      <div class='col-md-4 col-sm-12 col-xs-12'> 
         <h2 class='text-center'><%= biz.business_name %></h2>
         <%= image_tag(biz.logo.url(:p350x350)) %>
         <br>
