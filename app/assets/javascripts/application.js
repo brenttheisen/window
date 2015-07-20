@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+//toggles the .open class on the element to highlight it
+$(window).load(function() {
+  // Really hackish workaround for Bootstrap wanting to hide container dropdown
+  $('.dropdown-no-close > a')
+    .unbind('click')
+    .click(function(e) {
+      e.stopPropagation();
+      $(this).parent('li').toggleClass('open');
+    });
+});
